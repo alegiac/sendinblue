@@ -39,13 +39,6 @@ class SendinblueWrapper {
      */
     public function __call($method, array $args)
     {
-        // If it's a method, call it
-        if(method_exists($this->ml, $method))
-        {
             return call_user_func_array(array($this->ml, $method), $args);
-        }
-
-        // Otherwise, treat it as a property
-        return $this->ml->{$method};
     }
 }
